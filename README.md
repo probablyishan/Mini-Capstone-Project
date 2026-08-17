@@ -76,8 +76,8 @@ campus-os/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/probablyishan/project-something.git
-cd project-something
+git clone https://github.com/probablyishan/Mini-Capstone-Project.git
+cd Mini-Capstone-Project
 ```
 
 ### 2. Create and Activate a Virtual Environment (Optional)
