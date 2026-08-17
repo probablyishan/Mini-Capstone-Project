@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusOS — Everything you need for college</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            ink: '#0F172A',
+            accent: { DEFAULT: '#4F46E5', soft: '#EEF2FF', dark: '#3730A3' },
+            canvas: '#F8FAFC',
+            canvasDark: '#0B0F19',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root { --bg:#F8FAFC; --fg:#0F172A; }
+    html.dark { --bg:#0B0F19; --fg:#E2E8F0; }
+    body { font-feature-settings: "cv11","ss01"; }
+    ::-webkit-scrollbar { width:8px; height:8px; }
+    ::-webkit-scrollbar-thumb { background:rgba(100,116,139,.3); border-radius:4px; }
+    .fade-in { animation: fadeIn .25s ease; }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+    .slide-up { animation: slideUp .2s ease; }
+    @keyframes slideUp { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body class="h-full bg-canvas dark:bg-canvasDark text-ink dark:text-slate-200 font-sans antialiased">
+  <div id="app" class="min-h-full"></div>
+
+  <!-- Toast container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[100] flex flex-col gap-2"></div>
+
+  <!-- Command palette -->
+  <div id="cmdk-overlay" class="hidden fixed inset-0 z-[90] bg-black/30 backdrop-blur-sm flex items-start justify-center pt-[15vh]">
+    <div class="w-full max-w-xl mx-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden slide-up">
+      <div class="flex items-center gap-3 px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+        <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="cmdk-input" type="text" placeholder="Search tools, notes, expenses…" class="flex-1 bg-transparent outline-none text-sm" autocomplete="off" />
+        <kbd class="text-xs text-slate-400 border border-slate-200 dark:border-slate-700 rounded px-1.5 py-0.5">Esc</kbd>
+      </div>
+      <div id="cmdk-results" class="max-h-80 overflow-y-auto p-2"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/store.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/router.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/command-palette.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

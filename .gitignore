@@ -1,0 +1,82 @@
+# Environment variables and secrets (CRITICAL)
+.env
+.env.*
+!.env.example
+*.env
+*.key
+*.pem
+*.cert
+*.crt
+secrets.json
+credentials.json
+token.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+expenses.db
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Testing & Quality
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# OS / Editor
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Antigravity & Agent workspace artifacts
+.agents/
+.gemini/
+*.log
